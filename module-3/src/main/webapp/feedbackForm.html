@@ -1,61 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<title>Job Application Form</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Job Application Form</title>
 </head>
+
 <body>
-	<div class="container">
-		<h1>Job Application Form</h1>
-		<p class="description">Please fill out the form below to apply for
-			a position with our company. All fields are required.</p>
+   <div class="container">
+      <h1>Job Application Form</h1>
+      <p class="description">Please fill out the form below.</p>
 
-		<form action="displayFeedback.jsp" method="post">
+      <form action="displayFeedback.jsp" method="post">
 
-			<label for="fullName">Full Name:</label> <input type="text"
-				id="fullName" name="fullName" required>
-			<p class="field-description">Enter your Full name.</p>
+         <label for="fullName">Full Name:</label> <input type="text" id="fullName" name="fullName" required>
+         <p class="field-description">Enter your Full name.</p>
 
-			<label for="email">Email Address:</label> <input type="email"
-				id="email" name="email" required>
-			<p class="field-description">Provide a valid email address.</p>
+         <label for="email">Email Address:</label> <input type="email" id="email" name="email" required>
+         <p class="field-description">Provide a valid email address.</p>
 
-			<label for="phone">Phone Number:</label> <input type="tel" id="phone"
-				name="phone" placeholder="e.g., 123-456-7890" required>
-			<p class="field-description">Enter your phone number.</p>
+         <label for="phone">Phone Number:</label> <input type="tel" id="phone" name="phone" required>
+         <p class="field-description">Enter your phone number.</p>
 
-			<label for="position">Position Applying For:</label> <select
-				id="position" name="position" required>
-				<option value="">--Please choose an option--</option>
-				<option value="Software Engineer">Software Engineer</option>
-				<option value="Data Analyst">Data Analyst</option>
-				<option value="Project Manager">Project Manager</option>
-				<option value="UX Designer">UX Designer</option>
-				<option value="Other">Other</option>
-			</select>
-			<p class="field-description">Select the position you are
-				interested in.</p>
+         <label for="position">Position Applying For:</label> <select id="position" name="position" required>
+            <option value=""></option>
+            <option value="Code Ninja">Code Ninja</option>
+            <option value="DevOps Guru">DevOps Guru</option>
+            <option value="Full-Stack Magician">Full-Stack Magician</option>
+            <option value="Scrum Master">Scrum Master</option>
+            <option value="Other">Other</option>
+         </select>
+         <p class="field-description">Select the position you are
+            interested in.</p>
 
-			<label>Are you legally authorized to work in the U.S.?</label>
-			<div class="radio-group">
-				<input type="radio" id="workAuthYes" name="workAuthorization"
-					value="Yes" required> <label for="workAuthYes">Yes</label>
-				<input type="radio" id="workAuthNo" name="workAuthorization"
-					value="No"> <label for="workAuthNo">No</label>
-			</div>
-			<p class="field-description">Indicate your legal authorization to
-				work in the United States.</p>
+         <label for="startDate">When can you start?</label> <input type="date" id="startDate" name="startDate">
+         <br>
+         <p class="field-description" style="margin-top:10px">Please select the date you can start.</p>
 
-			<label for="coverLetter">Cover Letter:</label>
-			<textarea id="coverLetter" name="coverLetter" rows="6"
-				placeholder="Tell us why you're a good fit for this role..."></textarea>
-			<p class="field-description">Optional: Provide a brief cover
-				letter outlining your interest and qualifications.</p>
+         <label for="coverLetter">Why should we hire you?</label>
+         <textarea id="whyHire" name="whyHire" rows="6" placeholder="Tell us about yourself!"></textarea>
 
-			<input type="submit" value="Submit Application">
-		</form>
-	</div>
+         <input type="submit" value="Submit Application">
+      </form>
+   </div>
 </body>
+
 </html>

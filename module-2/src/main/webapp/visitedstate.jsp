@@ -1,3 +1,9 @@
+<!--
+    Lea Trueworthy
+    CSD 430 Module 2 Assignment
+    May 31, 2025
+-->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
