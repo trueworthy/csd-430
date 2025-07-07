@@ -1,7 +1,7 @@
 package configBean;
 
 //Lea Trueworthy
-//CSD 430 Module 8 Assignment: Working with CRUD-READ, JDBC, & JavaBeans
+//CSD 430 Module 8 Assignment: Working with CRUD-CREATE, JDBC, & JavaBeans
 //July 1, 2025
 
 public class ConfigProject implements java.io.Serializable {
