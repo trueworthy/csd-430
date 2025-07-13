@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!--
     Lea Trueworthy
     CSD 430 Module 9 Assignment: Working with CRUD-DELETE, JDBC, & JavaBeans
@@ -11,6 +10,7 @@
 <title>Library DB Setup</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
 	<h1>Library Database Setup Mod 9</h1>
 	<ul>

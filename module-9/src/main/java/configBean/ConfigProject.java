@@ -33,7 +33,7 @@ public class ConfigProject implements java.io.Serializable {
 			stmt.executeUpdate("DROP TABLE IF EXISTS " + TABLE_NAME);
 			dataStringBuilder.append("Table ").append(TABLE_NAME).append(" dropped (if it existed).<br />");
 		} catch (java.sql.SQLException e) {
-			dataStringBuilder.append("<b>Error during drop operation: ").append(e.getMessage()).append("</b><br />");
+			dataStringBuilder.append("<b>Error during drop operation: </b>").append(e.getMessage()).append("<br />");
 		}
 
 		// ***************************************************************
@@ -52,7 +52,7 @@ public class ConfigProject implements java.io.Serializable {
 			stmt.executeUpdate(createTableSQL);
 			dataStringBuilder.append("Table ").append(TABLE_NAME).append(" created successfully.<br />");
 		} catch (java.sql.SQLException e) {
-			dataStringBuilder.append("<b>Table creation failed: ").append(e.getMessage()).append("</b><br />");
+			dataStringBuilder.append("<b>Table creation failed: </b>").append(e.getMessage()).append("<br />");
 		}
 
 		return dataStringBuilder.toString();
@@ -65,7 +65,7 @@ public class ConfigProject implements java.io.Serializable {
 	public String populateTable() {
 		StringBuilder dataStringBuilder = new StringBuilder();
 		
-// I decided to add more books to the list just to see what it would look like (plus I was bored one day)
+// I decided to add more books to the list just to see what it would look like
 		String[][] books = { 
 				{ "Murder Your Employer", "Rupert Holmes", "Mystery", "2022", "HC", "9781451648218" },
 				{ "The Instructor", "TR Hendricks", "Thriller", "2021", "MM", "9781250832962" },
@@ -144,7 +144,7 @@ public class ConfigProject implements java.io.Serializable {
 				java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
 				java.sql.ResultSet resultSet = stmt.executeQuery()) {
 
-			dataStringBuilder.append("<table border='1' class='table'>").append(
+			dataStringBuilder.append("<table border='1'>").append(
 					"<thead><tr>"
 					+ "<th>Book ID</th>"
 					+ "<th>Title</th>"
@@ -166,7 +166,7 @@ public class ConfigProject implements java.io.Serializable {
 			dataStringBuilder.append("</tbody></table>");
 
 		} catch (java.sql.SQLException e) {
-			dataStringBuilder.append("<p>Error retrieving data: ").append(e.getMessage()).append("</p>");
+			dataStringBuilder.append("<b>Error retrieving data: </b>").append(e.getMessage()).append("<br />");
 		}
 
 		return dataStringBuilder.toString();

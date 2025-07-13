@@ -11,7 +11,6 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>CRUD Delete</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -20,17 +19,17 @@
 	<h1>Delete Book</h1>
 
 	<a href="index_02.jsp">back to index02</a>
-	<br>
+	<br />
 	<br />
 
 	<!-- used same form as CRUD_Read -->
 	<form method="post" action="CRUD_Delete.jsp">
-		<label for="bookID">Book to Delete:</label><br>
+		<label for="bookID">Select a book to delete:</label><br />
 		<%=dbBean.formGetPK("")%>
 		<input type="hidden" name="action" value="showForm" />
 		<input type="submit" value="Delete Book" />
 	</form>
-	<br>
+	<br />
 	<%
 	String result = "";
 	if ("POST".equalsIgnoreCase(request.getMethod())) {

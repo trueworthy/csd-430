@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:useBean id='dbBean' class='database.DbBean' />
 
 <!--
@@ -15,6 +14,7 @@
 <title>CRUD Create</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
 	<h1>Create a New Book</h1>
 

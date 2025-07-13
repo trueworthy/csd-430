@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:useBean id='dbBean' class='configBean.ConfigProject' />
 
 <!--
@@ -12,10 +11,10 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Populate Library</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
 	<h1>Populate Library</h1>
 

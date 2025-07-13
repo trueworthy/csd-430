@@ -101,9 +101,9 @@ public class DbBean implements java.io.Serializable {
                 "<label for='author'>Author</label>&nbsp;&nbsp;" +
                 "<input type='text' name='author' id='author' required maxlength='255'><br />\n" +
                 "<label for='genre'>Genre</label>&nbsp;&nbsp;" +
-                "<input type='text' name='genre' id='genre' required maxlength='100'><br />\n" +
+                "<input type='text' name='genre' id='genre'><br />\n" +
                 "<label for='publish_year'>Publication Year</label>&nbsp;&nbsp;" +
-                "<input type='number' name='publish_year' id='publish_year' required min='1800'><br />\n" +
+                "<input type='number' name='publish_year' id='publish_year' required><br />\n" +
                 "<label for='bookFormat'>Format</label>&nbsp;&nbsp;" +
                 "<input type='text' name='bookFormat' id='bookFormat' maxlength='50'><br />\n" +
                 "<label for='ISBN'>ISBN</label>&nbsp;&nbsp;" +
@@ -146,21 +146,27 @@ public class DbBean implements java.io.Serializable {
     public String read(String bookID) {
         StringBuilder dataStringBuilder = new StringBuilder();
         
-        // Check if bookID is null or empty
         if (bookID == null || bookID.trim().isEmpty()) {
             return "No book ID provided";
         }
         
         String sql = "SELECT * FROM trueworthy_library_data WHERE bookID = ?";
-        
         try (java.sql.Connection conn = getConnection();
             java.sql.PreparedStatement stmt = conn.prepareStatement(sql)) {
             
             stmt.setString(1, bookID);
             
             try (java.sql.ResultSet resultSet = stmt.executeQuery()) {
-                dataStringBuilder.append("<table border='1' class='table'>");
-                dataStringBuilder.append("<thead><tr><th>Book ID</th><th>Title</th><th>Author</th><th>Genre</th><th>Publication Year</th><th>Book Format</th><th>ISBN</th></tr></thead>");
+                dataStringBuilder.append("<table border='1'>");
+                dataStringBuilder.append("<thead><tr>"
+                		+ "<th>Book ID</th>"
+                		+ "<th>Title</th>"
+                		+ "<th>Author</th>"
+                		+ "<th>Genre</th>"
+                		+ "<th>Publication Year</th>"
+                		+ "<th>Book Format</th>"
+                		+ "<th>ISBN</th>"
+                		+ "</tr></thead>");
                 dataStringBuilder.append("<tbody>");
 
                 boolean found = false;
@@ -187,7 +193,7 @@ public class DbBean implements java.io.Serializable {
             
         } catch(java.sql.SQLException e) {
             System.err.println("SQL Exception: " + e.getMessage());
-            dataStringBuilder.append("<p>Error retrieving data: ").append(e.getMessage()).append("</p>");
+            dataStringBuilder.append("<b>Error retrieving data: </b>").append(e.getMessage()).append("<br />");
         }
         
         return dataStringBuilder.toString();
@@ -234,7 +240,16 @@ public class DbBean implements java.io.Serializable {
             java.sql.ResultSet resultSet = stmt.executeQuery()) {
             
             dataStringBuilder.append("<table border='1'>");
-            dataStringBuilder.append("<thead><tr><th>Book ID</th><th>Title</th><th>Author</th><th>Genre</th><th>Publication Year</th><th>Format</th><th>ISBN</th></tr></thead>");
+            dataStringBuilder.append("<thead><tr>"
+            		+ "<th>Book ID</th>"
+            		+ "<th>Title</th>"
+            		+ "<th>Author</th>"
+            		+ "<th>Genre</th>"
+            		+ "<th>Publication Year</th>"
+            		+ "<th>Format</th>"
+            		+ "<th>ISBN</th>"
+            		+ "</tr>"
+            		+ "</thead>");
             dataStringBuilder.append("<tbody>");
 
             while(resultSet.next()) {
@@ -251,7 +266,7 @@ public class DbBean implements java.io.Serializable {
             
         } catch(java.sql.SQLException e) {
             System.err.println("SQL Exception: " + e.getMessage());
-            dataStringBuilder.append("<p>Error retrieving data: ").append(e.getMessage()).append("</p>");
+            dataStringBuilder.append("<b>Error retrieving data: </b>").append(e.getMessage()).append("<br />");
         }
 
         return dataStringBuilder.toString();

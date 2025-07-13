@@ -1,6 +1,5 @@
 <%@ page import="java.util.*"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:useBean id="dbBean" class="database.DbBean" scope="page" />
 
 <!--
@@ -12,7 +11,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <title>CRUD Update</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -20,7 +18,8 @@
 <body>
 	<h1>Update Book</h1>
 	<a href="index_02.jsp">back to index02</a>
-
+	<br />
+	<br />
 	<%
 	String result = "";
 	String selectedBookID = request.getParameter("bookID");
@@ -58,10 +57,9 @@
 		}
 	}
 	%>
-
-	<h3>Select a book to update:</h3>
+	
 	<form method="get" action="CRUD_Update.jsp">
-		<label for="bookID">Select Book:</label><br>
+		<label for="bookID">Select a book to update:</label><br />
 		<%=dbBean.formGetPK("")%>
 		<input type="hidden" name="action" value="showForm" />
 		<input type="submit" value="Load Book" />
@@ -73,15 +71,15 @@
 	if (showForm) {
 	%>
 	<form method="post" action="CRUD_Update.jsp">
-		<label for="bookID">Book ID:</label><br> <input type="text" id="bookID" name="bookID" readonly value="<%=bookData.get("bookID")%>"><br>
-		<br> <label for="title">Title:</label><br> <input type="text" id="title" name="title" required value="<%=bookData.get("title")%>"><br>
-		<br> <label for="author">Author:</label><br> <input type="text" id="author" name="author" required value="<%=bookData.get("author")%>"><br>
-		<br> <label for="genre">Genre:</label><br> <input type="text" id="genre" name="genre" value="<%=bookData.get("genre")%>"><br>
-		<br> <label for="publish_year">Publication Year:</label><br> <input type="number" id="publish_year" name="publish_year" value="<%=bookData.get("publish_year")%>"><br>
-		<br> <label for="bookFormat">Format:</label><br> <input type="text" id="bookFormat" name="bookFormat" value="<%=bookData.get("bookFormat")%>"><br> 		
+		<label for="bookID">Book ID:</label><br /> <input type="text" id="bookID" name="bookID" readonly value="<%=bookData.get("bookID")%>"><br />
+		<br /> <label for="title">Title:</label><br /> <input type="text" id="title" name="title" required value="<%=bookData.get("title")%>"><br />
+		<br /> <label for="author">Author:</label><br /> <input type="text" id="author" name="author" required value="<%=bookData.get("author")%>"><br />
+		<br /> <label for="genre">Genre:</label><br /> <input type="text" id="genre" name="genre" value="<%=bookData.get("genre")%>"><br />
+		<br /> <label for="publish_year">Publication Year:</label><br /> <input type="number" id="publish_year" name="publish_year" value="<%=bookData.get("publish_year")%>"><br />
+		<br /> <label for="bookFormat">Format:</label><br /> <input type="text" id="bookFormat" name="bookFormat" value="<%=bookData.get("bookFormat")%>"><br /> 		
 				
 		<!--This is for a dropdown menu for the book format. I'm not sure which one the professor wants -->
-		<!--<br> <label for="bookFormat">Format:</label><br>
+		<!--<br /> <label for="bookFormat">Format:</label><br />
 		<select id="bookFormat" name="bookFormat">
     			<option value="HC" id="Hardcover" <%= "HC".equals(bookData.get("bookFormat")) ? "selected" : "" %>>HC</option> 		
     			<option value="PB" id="Paperback" <%= "PB".equals(bookData.get("bookFormat")) ? "selected" : "" %>>PB</option>
@@ -90,8 +88,8 @@
     			<option value="AUDIO" <%= "AUDIO".equals(bookData.get("bookFormat")) ? "selected" : "" %>>AUDIO</option>
 		</select>-->
 		
-		<br> <label for="ISBN">ISBN:</label><br> <input type="text" id="ISBN" name="ISBN" value="<%=bookData.get("ISBN")%>"><br>
-		<br> <input type="submit" name="update" value="Update Record">
+		<br /> <label for="ISBN">ISBN:</label><br /> <input type="text" id="ISBN" name="ISBN" value="<%=bookData.get("ISBN")%>"><br />
+		<br /> <input type="submit" name="update" value="Update Record">
 	</form>
 	<%
 	}
